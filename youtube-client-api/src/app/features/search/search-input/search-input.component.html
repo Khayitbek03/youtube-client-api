@@ -1,0 +1,19 @@
+<div class="search-wrapper">
+  <mat-form-field appearance="outline" class="search-input">
+    <input matInput placeholder="Search" [(ngModel)]="query" (keydown.enter)="onSearchClick()"
+      [disabled]="(isLoggedIn$ | async) === false" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onSearchClick()"> Search </button>
+  <button mat-icon-button (click)="onSettingsClick()" aria-label="Search settings">
+    <mat-icon class="settingsIcon">settings</mat-icon>
+  </button>
+  <div *ngIf="showSettings" class="sort-panel">
+    <span>Sort by:</span>
+    <button mat-button (click)="sortBy('dateAsc')">Date Asc</button>
+    <button mat-button (click)="sortBy('dateDesc')">Date Desc</button>
+    <button mat-button (click)="sortBy('viewsAsc')">Views Asc</button>
+    <button mat-button (click)="sortBy('viewsDesc')">Views Desc</button>
+    <label> by word: <input [(ngModel)]="wordFilter" (input)="applyFilters()" />
+    </label>
+  </div>
+</div>

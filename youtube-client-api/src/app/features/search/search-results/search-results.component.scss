@@ -1,0 +1,18 @@
+.results-wrapper {
+  margin-top: 50px;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: 0 16px;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+}
+
+app-search-item {
+  flex: 0 1 calc(30% - 24px);
+  box-sizing: border-box;
+}

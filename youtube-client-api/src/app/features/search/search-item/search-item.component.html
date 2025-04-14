@@ -1,0 +1,16 @@
+<div class="video-card" [appPublishedDateColor]="video.snippet.publishedAt">
+  <img class="thumbnail" [src]="video.snippet.thumbnails.medium.url" [alt]="video.snippet.title" />
+  <div class="info">
+    <h3 class="title">{{ video.snippet.title }}</h3>
+    <p class="channel">{{ video.snippet.channelTitle }}</p>
+    <div class="stats">
+      <span>{{ video.statistics?.viewCount | number }} views</span>
+      <span>{{ video.statistics?.likeCount | number }} likes</span>
+      <span>{{ video.statistics?.commentCount | number }} comments</span>
+    </div>
+    <button mat-icon-button aria-label="More options" class="moreBtn" [routerLink]="['/details', getVideoId(video)]">
+      <span>More</span>
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </div>
+</div>

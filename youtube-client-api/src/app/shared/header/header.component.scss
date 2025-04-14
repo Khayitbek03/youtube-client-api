@@ -1,0 +1,19 @@
+.app-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+app-search-input {
+  flex: 1;
+  margin: 0 24px;
+}
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-icon {
+  color: #2f80ed;
+}

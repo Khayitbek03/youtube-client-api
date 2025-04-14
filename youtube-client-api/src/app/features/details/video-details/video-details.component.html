@@ -1,0 +1,17 @@
+<div class="details-container" *ngIf="video">
+  <img class="details-thumbnail" [src]="video.snippet.thumbnails.medium.url" [alt]="video.snippet.title" />
+  <div class="info">
+    <h2>{{ video.snippet.title }}</h2>
+    <p class="description">{{ video.snippet.description }}</p>
+    <p><strong>Published:</strong> {{ video.snippet.publishedAt | date }}</p>
+    <p><strong>Views:</strong> {{ video.statistics?.viewCount | number }}</p>
+    <p><strong>Likes:</strong> {{ video.statistics?.likeCount | number }}</p>
+    <p><strong>Dislikes:</strong> {{ video.statistics?.dislikeCount || 'N/A' }}</p>
+    <p><strong>Comments:</strong> {{ video.statistics?.commentCount | number }}</p>
+    <button mat-raised-button color="accent" (click)="toggleFavorite()">
+      <mat-icon>{{ isFavorite ? 'favorite' : 'favorite_border' }}</mat-icon> {{ isFavorite ? 'Remove from Favorites' :
+      'Add to Favorites' }} </button>
+    <button mat-button color="primary" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon> Back </button>
+  </div>
+</div>

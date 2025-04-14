@@ -1,0 +1,20 @@
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .search-input {
+    flex: 1;
+  }
+}
+.sort-panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+
+  input {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+}
